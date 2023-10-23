@@ -1,0 +1,40 @@
+.navigationParent{
+    height: 100%;
+    width: 5%;
+    background: black;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.elementContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    justify-items: center;
+    cursor: pointer;
+}
+
+.titleContainer{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.titleContainer:active{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    color: #D41B2C;
+}
+
+
+
+.iconContainer{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}

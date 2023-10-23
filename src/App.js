@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {BrowserRouter as Router, Navigate, Route, Routes, useParams} from 'react-router-dom';
+import Kanbas from "./Kanbas";
+import Dashboard from "./Kanbas/Dashboard";
+import {Navigation} from "./Kanbas/Navigation";
+import Courses from './Kanbas/Courses/index'
+import {Course} from './Kanbas/Courses/CoursePage'
+import './App.css'
+import {CourseNavigation} from "./Kanbas/Courses/CourseNavigation";
+import Modules from "./Kanbas/Courses/Modules";
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+          <div className="App">
+              <Navigation />
+              <div className="content">
+                  <Routes>
+                      <Route path="/Kanbas/Courses" element={<Courses />} />
+                      <Route path="/Kanbas/Courses/:courseId/*" element={<Course />} />
+                      {/*<Route path="Dashboard" element={<Dashboard />} />*/}
+                      {/*<Route path="Courses/:courseId/*" element={<Courses2 />} />*/}
+                      {/*<Route path="Courses/:courseId/*" element={<Courses />} />*/}
+                  </Routes>
+
+              </div>
+        </div>
+      </Router>
   );
 }
 
